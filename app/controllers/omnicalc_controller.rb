@@ -11,7 +11,12 @@ class OmnicalcController < ApplicationController
     @results = @num * @num
     @results = @results.to_f
 
-    render({:template => "omnicalc_templates/square_results"})
+    render({:template => "omnicalc_templates/square_result"})
+  end
+
+  def square_root_form
+    render({:template => "omnicalc_templates/square_root_form"})
+
   end
 
 
