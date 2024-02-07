@@ -49,6 +49,18 @@ class OmnicalcController < ApplicationController
     @formatted_principal = format("$%.2f", @principal)
     @formatted_payment = format("$%.2f", @payment)
 
-    render({ :template => "omnicalc_templates/payment_result"})
+    render({ :template => "omnicalc_templates/payment_result" })
+  end
+
+  def random_form
+    render({ :template => "omnicalc_templates/random_form" })
+  end
+
+  def random_results
+    @min = params.fetch("user_min").to_f
+    @max = params.fetch("user_max").to_f
+
+    @random = rand(@min..@max)
+    render({ :template => "omnicalc_templates/random_result" })
   end
 end
