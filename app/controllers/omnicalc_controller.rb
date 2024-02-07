@@ -19,6 +19,14 @@ class OmnicalcController < ApplicationController
 
   end
 
+  def square_root_result
+    @num = params.fetch("user_number").to_i
+    @result = Math.sqrt(@num)
+    @result = @result.to_f
+
+    render({:template => "omnicalc_templates/square_root_result"})
+  end
+
 
 
 
