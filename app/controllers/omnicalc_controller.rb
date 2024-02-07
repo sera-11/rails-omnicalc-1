@@ -46,8 +46,10 @@ class OmnicalcController < ApplicationController
     @payment = calculate_monthly_payment(@principal, @rate, @periods)
 
     @formatted_apr = format("%.4f%%", @rate)
-    @formatted_principal = format("$%.2f", @principal)
-    @formatted_payment = format("$%.2f", @payment)
+    #@formatted_principal = format("$%.2f", @principal)
+    #@formatted_payment = format("$%.2f", @payment)
+
+
 
     render({ :template => "omnicalc_templates/payment_result" })
   end
