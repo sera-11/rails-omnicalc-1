@@ -5,7 +5,7 @@ class OmnicalcController < ApplicationController
   end
 
   def square_result
-    @num = params.fetch("number").to_i
+    @num = params.fetch("number").to_f
     @results = @num * @num
     @results = @results.to_f
 
@@ -17,7 +17,7 @@ class OmnicalcController < ApplicationController
   end
 
   def square_root_result
-    @num = params.fetch("user_number").to_i
+    @num = params.fetch("user_number").to_f
     @result = Math.sqrt(@num)
     @result = @result.to_f
 
